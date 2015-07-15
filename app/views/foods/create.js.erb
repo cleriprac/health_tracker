@@ -1,5 +1,5 @@
 $('#new_food').remove();
-$('#new_link').show();
+$('#new_link_food').show();
 $("#<%= current_user.id %>_total_gained").text('<%= current_user.total_gained %>');
 $("#<%= current_user.id %>_net_total").text('<%= current_user.net_total %>');
-$("#<%= current_user.id %>_foods").append("<div class='well'>" + "<%= @food.name %> | <%= @food.calories %>" + "</div>");
+$("#<%= current_user.id %>_foods").append("<div class='well'>" + "<strong><%= @food.name %></strong><br><%= @food.calories %> calories" + "</div>");

@@ -5,12 +5,13 @@
       <h3>Calories Burned:</h3>
       <span id="<%= current_user.id %>_total_spent"><%= current_user.total_spent %> calories</span>
     </div>
-    <%= link_to "Enter Exercise", new_exercise_path, id: "new_link", remote: true, :class => "btn btn-success" %>
+    <%= link_to "Enter Exercise", new_exercise_path, id: "new_link_exercise", remote: true, :class => "btn btn-success" %>
     <hr>
 
     <% current_user.exercises.each do |exercise| %>
       <div class="well">
-        <%= exercise.name %> | <%= exercise.calories %>
+        <strong><%= exercise.name %></strong><br>
+        <%= exercise.calories %> calories
       </div>
     <% end %>
       <span id="<%= current_user.id %>_exercises"%></span>

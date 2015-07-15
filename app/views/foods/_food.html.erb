@@ -5,7 +5,7 @@
       <h3>Calories Consumed:</h3>
       <span id="<%= current_user.id %>_total_gained"><%= current_user.total_gained %></span>
     </div>
-    <%= link_to "Enter Food", new_food_path, id: "new_link", remote: true, :class => "btn btn-primary" %>
+    <%= link_to "Enter Food", new_food_path, id: "new_link_food", remote: true, :class => "btn btn-primary" %>
     <hr>
 
     <% current_user.foods.each do |food| %>
