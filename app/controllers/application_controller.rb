@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :total_consumed ) }
-    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:current_password, :username, :email, :password, :password_confirmation, :total_consumed) }
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :total_spent, :total_gained, :net_total ) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:current_password, :username, :email, :password, :password_confirmation, :total_spent, :total_gained, :net_total) }
   end
 end

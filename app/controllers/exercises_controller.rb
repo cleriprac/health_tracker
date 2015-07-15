@@ -13,7 +13,8 @@ class ExercisesController < ApplicationController
     current_user.exercises.push(@exercise)
     if @exercise.save
       flash[:notice] = "Your exercise has been added."
-      current_user.total_consumed -= @exercise.calories
+      current_user.total_spent += @exercise.calories
+      current_user.net_total -= @exercise.calories
       current_user.save
       respond_to do |format|
         format.html { redirect_to root_path }

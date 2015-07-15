@@ -5,5 +5,4 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :foods
   has_many :exercises
-  validates_presence_of :total_consumed
 end

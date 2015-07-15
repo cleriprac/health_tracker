@@ -2,10 +2,10 @@
 
   <% if user_signed_in? %>
     <div class="well">
-      <h3>Calories Consumed:</h3>
-      <span id="<%= current_user.id %>_total_consumed"><%= current_user.total_consumed %></span>
+      <h3>Calories Burned:</h3>
+      <span id="<%= current_user.id %>_total_spent"><%= current_user.total_spent %> calories</span>
     </div>
-    <%= link_to "Enter Exercise", new_exercise_path, id: "new_link", remote: true, :class => "btn btn-primary" %>
+    <%= link_to "Enter Exercise", new_exercise_path, id: "new_link", remote: true, :class => "btn btn-success" %>
     <hr>
 
     <% current_user.exercises.each do |exercise| %>

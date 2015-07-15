@@ -1,16 +1,17 @@
-<div class="well">
-
   <% if user_signed_in? %>
+
+<div class="well">
     <div class="well">
       <h3>Calories Consumed:</h3>
-      <span id="<%= current_user.id %>_total_consumed"><%= current_user.total_consumed %></span>
+      <span id="<%= current_user.id %>_total_gained"><%= current_user.total_gained %></span>
     </div>
     <%= link_to "Enter Food", new_food_path, id: "new_link", remote: true, :class => "btn btn-primary" %>
     <hr>
 
     <% current_user.foods.each do |food| %>
       <div class="well">
-        <%= food.name %> | <%= food.calories %>
+        <strong><%= food.name %></strong><br>
+        <%= food.calories %> calories
       </div>
     <% end %>
       <span id="<%= current_user.id %>_foods"%></span>

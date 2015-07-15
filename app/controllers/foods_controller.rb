@@ -13,7 +13,8 @@ class FoodsController < ApplicationController
     current_user.foods.push(@food)
     if @food.save
       flash[:notice] = "Your food has been added."
-      current_user.total_consumed += @food.calories
+      current_user.total_gained += @food.calories
+      current_user.net_total += @food.calories
       current_user.save
       respond_to do |format|
         format.html { redirect_to root_path }
