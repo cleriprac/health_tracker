@@ -1,0 +1,20 @@
+<% if user_signed_in? %>
+  <%= link_to "Enter Food", new_food_path, id: "new_link", remote: true %>
+<% else %>
+  <p>You must sign in to add a food.</p>
+<% end %>
+
+<div class="well">
+
+  <div class="well">
+    <h3>Calories Consumed:</h3>
+    <span id="<%= current_user.id %>_total_consumed"><%= current_user.total_consumed %></span>
+  </div>
+
+  <% current_user.foods.each do |food| %>
+    <div class="well">
+      <%= food.name %> | <%= food.calories %> <br>
+    </div>
+  <% end %>
+
+</div>
