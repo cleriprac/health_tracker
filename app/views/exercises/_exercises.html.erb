@@ -3,26 +3,25 @@
   <% if user_signed_in? %>
     <div class="well">
       <h3>Calories Burned:</h3>
-      <span id="<%= current_user.id %>_total_spent"><%= current_user.total_spent %> calories</span>
+      <span id="<%= current_user.id %>_total_spent"><%= current_user.total_spent %></span> calories
     </div>
     <%= link_to "Enter Exercise", new_exercise_path, id: "new_link_exercise", remote: true, :class => "btn btn-success" %>
     <hr>
 
     <table id="exercises" class="table table-bordered">
       <tr>
-        <th>name</th>
-        <th>calories</th>
-        <th>created_at</th>
+        <th>Name</th>
+        <th>Calories</th>
+        <th>Date</th>
       </tr>
       <% current_user.exercises.each do |exercise| %>
         <tr>
           <td><%= exercise.name %></td>
           <td><%= exercise.calories %> calories</td>
-          <td><%= exercise.created_at %></td>
+          <td><%= exercise.formatted_time %></td>
         </tr>
       <% end %>
     </table>
-
   <% else %>
     <p>You must sign in to add a exercise.</p>
   <% end %>

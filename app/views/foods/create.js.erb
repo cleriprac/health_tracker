@@ -2,4 +2,4 @@ $('#new_food').remove();
 $('#new_link_food').show();
 $("#<%= current_user.id %>_total_gained").text('<%= current_user.total_gained %>');
 $("#<%= current_user.id %>_net_total").text('<%= current_user.net_total %>');
-$('#foods tr:last').after("<tr><td><%= @food.name %></td><td><%= @food.calories %> calories</td><td><%= @food.created_at %></td></tr>");
+$('#foods tr:last').after("<tr><td><%= @food.name %></td><td><%= @food.calories %> calories</td><td><%= @food.formatted_time %></td></tr>");

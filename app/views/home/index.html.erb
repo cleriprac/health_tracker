@@ -1,12 +1,18 @@
-<div class="well">
-  <h3>Net Calories:</h3>
-  <span id="<%= current_user.id %>_net_total"><%= current_user.net_total %></span>
+<% if user_signed_in? %>
+<div class="well text-center">
+  <h1>Net Calories:</h1>
+
+  <h3><span id="<%= current_user.id %>_net_total"><%= current_user.net_total %> calories</span></h3>
 </div>
 
 <div class="col-md-6">
-  <%= render 'foods/food' %>
+  <%= render 'foods/foods' %>
 </div>
 
 <div class="col-md-6">
-<%= render 'exercises/exercise' %>
+<%= render 'exercises/exercises' %>
 </div>
+
+<% else %>
+  <h3>Please Login</h3>
+<% end %>

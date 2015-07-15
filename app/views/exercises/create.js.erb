@@ -2,4 +2,4 @@ $('#new_exercise').remove();
 $('#new_link_exercise').show();
 $("#<%= current_user.id %>_total_spent").text('<%= current_user.total_spent %>');
 $("#<%= current_user.id %>_net_total").text('<%= current_user.net_total %>');
-$('#exercises tr:last').after("<tr><td><%= @exercise.name %></td><td><%= @exercise.calories %> calories</td><td><%= @exercise.created_at %></td></tr>");
+$('#exercises tr:last').after("<tr><td><%= @exercise.name %></td><td><%= @exercise.calories %> calories</td><td><%= @exercise.formatted_time %></td></tr>");
