@@ -1,3 +1,4 @@
 $('#new_food').remove();
 $('#new_link').show();
 $("#<%= current_user.id %>_total_consumed").text('<%= current_user.total_consumed %>');
+$("#<%= current_user.id %>_foods").append("<div class='well'>" + "<%= @food.name %> | <%= @food.calories %>" + "</div>");
