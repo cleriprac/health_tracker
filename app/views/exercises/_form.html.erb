@@ -1,0 +1,6 @@
+<%= bootstrap_form_for @exercise, :remote => true do |f| %>
+  <%= render "layouts/errors", :object => @exercise %>
+  <%= f.text_field :name, hide_label: true, placeholder: "Name" %>
+  <%= f.text_field :calories,  hide_label: true, placeholder: "Calories" %>
+  <%= f.submit "Submit" %>
+<% end %>

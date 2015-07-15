@@ -1,0 +1,24 @@
+<div class="well">
+
+  <% if user_signed_in? %>
+    <div class="well">
+      <h3>Calories Consumed:</h3>
+      <span id="<%= current_user.id %>_total_consumed"><%= current_user.total_consumed %></span>
+    </div>
+    <%= link_to "Enter Exercise", new_exercise_path, id: "new_link", remote: true, :class => "btn btn-primary" %>
+    <hr>
+
+    <% current_user.exercises.each do |exercise| %>
+      <div class="well">
+        <%= exercise.name %> | <%= exercise.calories %>
+      </div>
+    <% end %>
+      <span id="<%= current_user.id %>_exercises"%></span>
+
+
+  <% else %>
+    <p>You must sign in to add a exercise.</p>
+  <% end %>
+
+
+</div>

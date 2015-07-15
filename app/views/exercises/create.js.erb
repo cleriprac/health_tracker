@@ -1,0 +1,4 @@
+$('#new_exercise').remove();
+$('#new_link').show();
+$("#<%= current_user.id %>_total_consumed").text('<%= current_user.total_consumed %>');
+$("#<%= current_user.id %>_exercises").append("<div class='well'>" + "<%= @exercise.name %> | <%= @exercise.calories %>" + "</div>");
