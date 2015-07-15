@@ -3,18 +3,26 @@
 <div class="well">
     <div class="well">
       <h3>Calories Consumed:</h3>
-      <span id="<%= current_user.id %>_total_gained"><%= current_user.total_gained %></span>
+      <span id="<%= current_user.id %>_total_gained"><%= current_user.total_gained %> calories</span>
     </div>
     <%= link_to "Enter Food", new_food_path, id: "new_link_food", remote: true, :class => "btn btn-primary" %>
     <hr>
 
-    <% current_user.foods.each do |food| %>
-      <div class="well">
-        <strong><%= food.name %></strong><br>
-        <%= food.calories %> calories
-      </div>
-    <% end %>
-      <span id="<%= current_user.id %>_foods"%></span>
+    <table id="foods" class="table table-bordered">
+      <tr>
+        <th>name</th>
+        <th>calories</th>
+        <th>created_at</th>
+      </tr>
+      <% current_user.foods.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.calories %> calories</td>
+          <td><%= food.created_at %></td>
+        </tr>
+      <% end %>
+
+    </table>
 
 
   <% else %>

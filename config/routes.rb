@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   root to: "home#index"
   devise_for :users
 
-  resources :foods
-  resources :exercises
+  resources :foods, :except => [:index, :show]
+  resources :exercises, :except => [:index, :show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
