@@ -13,13 +13,13 @@
     </div>
   </div>
     <div>
-    <%= link_to "Drink Up", new_water_path, id: "new_link_water", remote: true, :class => "btn btn-primary" %>
+    <%= link_to "Drink Up", new_water_path, id: "new_link_water", remote: true, :class => "btn btn-primary col-xs-12 col-sm-6 col-sm-offset-3" %>
     </div>
 
     <table id="waters" class="table table-bordered">
       <tr>
-        <th><%= sortable "amount_drunk", "Amount" %></th>
-        <th><%= sortable "created_at", "Date" %></th>
+        <th>Amount</th>
+        <th>Date</th>
       </tr>
 
       <% current_user.waters.each do |water| %>

@@ -5,7 +5,7 @@
       <h3>Calories Burned:</h3>
       <span id="<%= current_user.id %>_total_spent"><%= current_user.total_spent %></span> calories
     </div>
-    <%= link_to "Enter Exercise", new_exercise_path, id: "new_link_exercise", remote: true, :class => "btn btn-success" %>
+    <%= link_to "Enter Exercise", new_exercise_path, id: "new_link_exercise", remote: true, :class => "btn btn-success col-xs-12 col-sm-6 col-sm-offset-3" %>
     <hr>
 
     <table id="exercises" class="table table-bordered">
