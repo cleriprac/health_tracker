@@ -1,0 +1,44 @@
+  <% if user_signed_in? %>
+
+<div class="well">
+    <div>
+    <%= link_to "Drink Up", new_water_path, id: "new_link_water", remote: true, :class => "btn btn-primary" %>
+    </div> 
+
+    <hr>
+  <div class="well text-center">
+    <h2>Goal:</h2>
+    <h4><%= current_user.water_goal %></h4>
+    <hr>
+    <h4>Total Water Consumed:</h4>
+    <h4h5><%= current_user.total_drunk %> ml</h5>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+    40%
+    </div>
+</div>
+  </div>
+    <hr>
+
+    <table id="waters" class="table table-bordered">
+      <tr>
+        <th>Amount</th>
+        <th>Date</th>
+      </tr>
+      <% current_user.waters.each do |water| %>
+        <tr>
+          <td><%= water.amount_drunk %> ml</td>
+          <td><%= water.formatted_time %></td>
+        </tr>
+
+      <% end %>
+    </table>
+
+
+
+  <% else %>
+    <p>You must sign in to add a water.</p>
+  <% end %>
+
+
+</div>

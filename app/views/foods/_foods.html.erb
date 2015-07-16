@@ -14,7 +14,7 @@
         <th>Calories</th>
         <th>Date</th>
       </tr>
-      <% for food in @foods %>
+      <% current_user.foods.each do |food| %>
         <tr>
           <td><%= food.name %></td>
           <td><%= food.calories %> calories</td>

@@ -1,0 +1,6 @@
+<%= bootstrap_form_for @water, :remote => true do |f| %>
+  <%= render "layouts/errors", :object => @water %>
+  <%= f.text_field :amount_drunk,  hide_label: true, placeholder: "Amount Drank (ml)" %>
+  <%= f.text_field :goal,  hide_label: true, placeholder: "Goal to Drank (ml)" %>
+  <%= f.submit "Submit" %>
+<% end %>
