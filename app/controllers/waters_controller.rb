@@ -15,7 +15,6 @@ class WatersController < ApplicationController
     if @water.save
       flash[:notice] = "Your goal has been added."
       current_user.total_drunk += @water.amount_drunk
-      current_user.water_goal = @water.goal
       current_user.save
       respond_to do |format|
         format.html { redirect_to waters_path }
