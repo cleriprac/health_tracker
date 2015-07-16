@@ -10,18 +10,19 @@
 
     <table id="foods" class="table table-bordered">
       <tr>
-        <th><%= link_to "Name", :sort => "name" %></th>
+        <th>Name</th>
         <th>Calories</th>
         <th>Date</th>
       </tr>
-      <% current_user.foods.each do |food| %>
-        <tr>
-          <td><%= food.name %></td>
-          <td><%= food.calories %> calories</td>
-          <td><%= food.formatted_time %></td>
-        </tr>
+      <%= paginate @foods %>
+    <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.calories %> calories</td>
+        <td><%= food.formatted_time %></td>
+      </tr>
 
-      <% end %>
+    <% end %>
     </table>
 
 

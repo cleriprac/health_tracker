@@ -1,7 +1,8 @@
 class FoodsController < ApplicationController
 
   def index
-    @foods = current_user.foods.order(params[:sort])
+
+    @foods = Food.page(params[:page]).per(10)
   end
 
   def new
