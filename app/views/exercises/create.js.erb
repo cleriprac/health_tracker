@@ -2,4 +2,5 @@ $('#new_exercise').remove();
 $('#new_link_exercise').show();
 $("#<%= current_user.id %>_total_spent").text('<%= current_user.total_spent %>');
 $("#<%= current_user.id %>_net_total").text('<%= current_user.net_total %> calories');
+$("#caloric_goal").text('<%= current_user.net_total %> C / <%= current_user.caloric_goal %> C')
 $('#exercises tr:last').after("<tr><td><%= @exercise.name %></td><td><%= @exercise.calories %> calories</td><td><%= @exercise.formatted_time %></td></tr>");

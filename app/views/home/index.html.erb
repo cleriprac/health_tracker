@@ -4,8 +4,9 @@
 
 <div class="well col-md-12 wellGray">
   <div class="well text-center">
-    <h1>Net Calories:</h1>
-    <h3><span id="<%= current_user.id %>_net_total"><%= current_user.net_total %> calories</span></h3>
+    <h4>CALORIC TARGET</h4>
+    <h5><span id="caloric_goal"><%= current_user.net_total %> C / <strong><%= current_user.caloric_goal %> C</strong></span</h5>
+    <br>
   </div>
 
   <div class="col-md-5 col-md-offset-1">

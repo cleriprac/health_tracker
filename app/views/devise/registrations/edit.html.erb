@@ -34,6 +34,13 @@
     <%= f.select :goal_measurement_type, [['ML','ml'],['Cups','cups'],['FL OZ','fl oz']] %>
   </div>
   <hr>
+  <h4>Daily Caloric Consumption Goal Settings:</h4>
+  <br>
+  <div class="field">
+    <%= f.label :caloric_goal %><br />
+    <%= f.text_field :caloric_goal,  hide_label: true, placeholder: "Set Goal" %>
+  </div>
+  <hr>
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
