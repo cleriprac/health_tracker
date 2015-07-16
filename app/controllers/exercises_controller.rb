@@ -1,7 +1,8 @@
 class ExercisesController < ApplicationController
 
   def index
-    @exercises = Exercise.all
+    @exercises = Exercise.where("user_id = ?", current_user.id).order(sort_column + ' ' + sort_direction).paginate(:page => params[:page]).per_page(10)
+
   end
 
   def new

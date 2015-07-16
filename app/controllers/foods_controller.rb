@@ -1,4 +1,9 @@
 class FoodsController < ApplicationController
+   helper_method :sort_column, :sort_direction
+
+  def index
+    @foods = Food.where("user_id = ?", current_user.id).order(sort_column + ' ' + sort_direction).paginate(:page => params[:food_page]).per_page(10)
+  end
 
   def new
     @food = Food.new
@@ -26,6 +31,14 @@ private
 
   def food_params
     params.require(:food).permit(:name, :calories, :user_id)
+  end
+
+  def sort_column
+    params[:sort] || "name"
+  end
+
+  def sort_direction
+    params[:direction] || "asc"
   end
 
 end

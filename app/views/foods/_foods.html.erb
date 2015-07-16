@@ -10,9 +10,9 @@
 
     <table id="foods" class="table table-bordered">
       <tr>
-        <th><%= sortable "name" %></th>
-        <th><%= sortable "calories" %></th>
-        <th><%= sortable "created_at" %></th>
+        <th><%= link_to "Name", :sort => "name" %></th>
+        <th><%= link_to "Calories", :sort => "calories" %></th>
+        <th><%= link_to "Date", :sort => "created_at" %></th>
       </tr>
 
     <% @foods.each do |food| %>

@@ -1,18 +1,21 @@
 <% if user_signed_in? %>
-<div class="well text-center">
-  <h1>Net Calories:</h1>
 
-  <h3><span id="<%= current_user.id %>_net_total"><%= current_user.net_total %> calories</span></h3>
+
+
+<div class="well col-md-12 wellGray">
+  <div class="well text-center">
+    <h1>Net Calories:</h1>
+    <h3><span id="<%= current_user.id %>_net_total"><%= current_user.net_total %> calories</span></h3>
+  </div>
+
+  <div class="col-md-5 col-md-offset-1">
+    <%= render 'foods/foods' %>
+  </div>
+
+  <div class="col-md-5">
+  <%= render 'exercises/exercises' %>
+  </div>
 </div>
-
-<div class="col-md-5 col-md-offset-1">
-  <%= render 'foods/foods' %>
-</div>
-
-<div class="col-md-5">
-<%= render 'exercises/exercises' %>
-</div>
-
 
 <div class="col-md-5 col-md-offset-1">
 <%= render 'waters/waters' %>

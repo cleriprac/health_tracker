@@ -1,0 +1,15 @@
+<div class="well col-md-6">
+<table class="table table-bordered">
+    <tr>
+      <th><%= link_to "Name", :sort => "name" %></th>
+      <th><%= link_to "Calories", :sort => "calories" %></th>
+    </tr>
+    <% @foods.each do |food| %>
+      <tr>
+        <th><%= food.name %></th>
+        <th><%= food.calories %></th>
+      </tr>
+    <% end %>
+    <%= will_paginate @foods, :param_name => "food_page" %>
+</table>
+</div>
