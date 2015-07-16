@@ -10,17 +10,19 @@
 
     <table id="exercises" class="table table-bordered">
       <tr>
-        <th>Name</th>
-        <th>Calories</th>
-        <th>Date</th>
+        <th><%= sortable "name", "Name" %></th>
+        <th><%= sortable "calories", "Calories" %></th>
+        <th><%= sortable "created_at", "Date" %></th>
       </tr>
-      <% current_user.exercises.each do |exercise| %>
+
+      <% @exercises.each do |exercise| %>
         <tr>
           <td><%= exercise.name %></td>
           <td><%= exercise.calories %> calories</td>
-          <td><%= exercise.formatted_time %></td>
+          <td class="small"><%= exercise.formatted_time %></td>
         </tr>
       <% end %>
+      <%= will_paginate @exercises, :param_name => "exercise_page" %>
     </table>
   <% else %>
     <p>You must sign in to add a exercise.</p>

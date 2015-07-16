@@ -10,19 +10,20 @@
 
     <table id="foods" class="table table-bordered">
       <tr>
-        <th>Name</th>
-        <th>Calories</th>
-        <th>Date</th>
+        <th><%= sortable "name" %></th>
+        <th><%= sortable "calories" %></th>
+        <th><%= sortable "created_at" %></th>
       </tr>
-      <%= paginate @foods %>
+
     <% @foods.each do |food| %>
       <tr>
         <td><%= food.name %></td>
         <td><%= food.calories %> calories</td>
-        <td><%= food.formatted_time %></td>
+        <td class="small"><%= food.formatted_time %></td>
       </tr>
 
     <% end %>
+    <%= will_paginate @foods, :param_name => "food_page"%>
     </table>
 
 

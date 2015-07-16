@@ -1,10 +1,5 @@
 class FoodsController < ApplicationController
 
-  def index
-
-    @foods = Food.page(params[:page]).per(10)
-  end
-
   def new
     @food = Food.new
   end
@@ -26,17 +21,6 @@ class FoodsController < ApplicationController
       render :new
     end
   end
-
-  # def update
-  #   @food = Food.find(params[:id])
-  #
-  #
-  #   respond_to do |format|
-  #     format.js
-  #   end
-  # end
-
-
 
 private
 
